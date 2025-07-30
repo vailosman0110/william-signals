@@ -2,29 +2,29 @@ name: Run Trading Bot
 
 on:
   schedule:
-    - cron: "*/2 * * * *" # كل دقيقتين
-  workflow_dispatch: # لإمكانية تشغيله يدويًا
+    - cron: '*/5 6-19 * * *'  # من 9 صباحًا حتى 10 مساءً بتوقيتك المحلي UTC+3
+  workflow_dispatch:
 
 jobs:
   run-bot:
     runs-on: ubuntu-latest
+
+    env:
+      API_KEY: ${{ secrets.API_KEY }}
+      TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+      CHAT_ID: ${{ secrets.CHAT_ID }}
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v2
         with:
-          python-version: '3.x'
+          python-version: 3.9
 
       - name: Install dependencies
-        run: |
-          pip install requests schedule
+        run: pip install requests
 
-      - name: Run the bot
-        env:
-          API_KEY: ${{ secrets.API_KEY }}
-          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          CHAT_ID: ${{ secrets.CHAT_ID }}
-        run: |
-          python forex_signal_bot.py
+      - name: Run bot script
+        run: python forex_signal_bot.py
