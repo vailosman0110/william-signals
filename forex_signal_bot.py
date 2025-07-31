@@ -5,9 +5,9 @@ import pytz
 import os
 
 # إعدادات البوت
-TELEGRAM_TOKEN = "8428714955:AAGqTTMqxAitY_RF93XPP3mvGGu5PVZvr_8"
-TELEGRAM_CHAT_ID = "@williamsignal0"
-API_KEY = "YOUR_TWELVE_DATA_API_KEY"
+TELEGRAM_TOKEN = "TELEGRAM_TOKEN"
+TELEGRAM_CHAT_ID = "CHAT_ID"
+API_KEY = "API_KEY"
 
 PAIRS = ["EUR/USD", "EUR/GBP", "EUR/JPY", "EUR/CAD", "USD/JPY", "EUR/CHF", "AUD/CHF", "NZD/CHF"]
 RSI_PERIOD = 14
@@ -97,7 +97,7 @@ def main():
 مدة الصفقة : 1 دقيقة
 
 @William_Trader_Support"""
-            send_message(message)
+            send_message(TELEGRAM_TOKEN, CHAT_ID, message)
 
             # انتظار دقيقة لإرسال النتيجة
             time.sleep(60)
@@ -107,7 +107,7 @@ def main():
             result_msg = f"""📊 نتيجة الصفقة
 
 {result}"""
-            send_message(result_msg)
+            send_message(TELEGRAM_TOKEN, CHAT_ID, result_msg)
             time.sleep(2)
 
 if __name__ == "__main__":
