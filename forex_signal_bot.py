@@ -5,9 +5,9 @@ import pytz
 import os
 
 # إعدادات البوت
-TELEGRAM_TOKEN = "TELEGRAM_TOKEN"
-TELEGRAM_CHAT_ID = "CHAT_ID"
-API_KEY = "API_KEY"
+TELEGRAM_TOKEN = "8428714955:AAGqTTMqxAitY_RF93XPP3mvGGu5PVZvr_8"
+TELEGRAM_CHAT_ID = "@williamsignal0"
+API_KEY = "YOUR_TWELVE_DATA_API_KEY"
 
 PAIRS = ["EUR/USD", "EUR/GBP", "EUR/JPY", "EUR/CAD", "USD/JPY", "EUR/CHF", "AUD/CHF", "NZD/CHF"]
 RSI_PERIOD = 14
@@ -81,7 +81,6 @@ def main():
 
         direction, emoji = get_direction(rsi)
         print(f"جارٍ فحص الزوج: {symbol} | RSI = {rsi:.2f} | MA = {ma:.4f} | الاتجاه = {direction}")
-        send_message(f"🔍 فحص الزوج: {symbol} | RSI = {rsi:.2f} | MA = {ma:.4f} | الاتجاه = {direction}")
 
         if direction:
             entry_time = datetime.utcnow().strftime("%H:%M")
