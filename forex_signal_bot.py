@@ -5,9 +5,9 @@ import pytz
 import os
 
 # إعدادات البوت
-TELEGRAM_TOKEN = "TELEGRAM_TOKEN"
-TELEGRAM_CHAT_ID = "CHAT_ID"
-API_KEY = "API_KEY"
+TELEGRAM_TOKEN = "secrets.TELEGRAM_TOKEN"
+TELEGRAM_CHAT_ID = "secrets.CHAT_ID"
+API_KEY = "secrets.API_KEY"
 
 PAIRS = ["EUR/USD", "EUR/GBP", "EUR/JPY", "EUR/CAD", "USD/JPY", "EUR/CHF", "AUD/CHF", "NZD/CHF"]
 RSI_PERIOD = 14
@@ -17,7 +17,7 @@ INTERVAL = "1min"
 def send_message(text):
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
     payload = {
-        "chat_id": TELEGRAM_CHAT_ID,
+        "chat_id":-1002601315237,
         "text": text,
         "parse_mode": "HTML"
     }
