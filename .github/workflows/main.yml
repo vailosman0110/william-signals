@@ -2,7 +2,7 @@ name: Run Trading Bot
 
 on:
   schedule:
-    - cron: '*/5 6-19 * * *'  # من 9 صباحًا حتى 10 مساءً بتوقيتك المحلي UTC+3
+    - cron: '*/5 6-19 * * *'  # كل 5 دقائق من 9 صباحًا إلى 10 مساء بتوقيت UTC+3
   workflow_dispatch:
 
 jobs:
