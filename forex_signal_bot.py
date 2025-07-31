@@ -81,6 +81,7 @@ def main():
 
         direction, emoji = get_direction(rsi)
         print(f"جارٍ فحص الزوج: {symbol} | RSI = {rsi:.2f} | MA = {ma:.4f} | الاتجاه = {direction}")
+        send_message(f"🔍 فحص الزوج: {symbol} | RSI = {rsi:.2f} | MA = {ma:.4f} | الاتجاه = {direction}")
 
         if direction:
             entry_time = datetime.utcnow().strftime("%H:%M")
