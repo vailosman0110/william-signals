@@ -87,5 +87,5 @@ def main():
             send_message(result_message)
             break  # إرسال توصية واحدة فقط
 
-if name == "__main__":
+if __name__ == "__main__":
     main()
